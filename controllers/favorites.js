@@ -12,6 +12,27 @@ class FavoriteController {
     }
   }
 
+  async updateFavorites(req, res) {
+    try {
+      const updatedFavorite = await favorite.findOneAndUpdate(
+        { userId: req.body.userId },
+        { dinosaurId: req.body.dinosaurId },
+        { new: true }
+      );
+      if (updatedFavorite) {
+        return res.json(updatedFavorite);
+      } else {
+        return res.status(404).send({
+          message: "Favoritos no encontrados",
+        });
+      }
+    } catch (err) {
+      res.status(500).send({
+        message: err.message || "Error al actualizar los favoritos",
+      });
+    }
+  }
+
   async searchFavoritesID(req, res) {
     try {
       const favoriteData = await favorite.find({ userId: req.body.userId });

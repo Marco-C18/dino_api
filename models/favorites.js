@@ -10,7 +10,7 @@ const favoriteSchema = new mongoose.Schema({
     required: true,
   },
   dinosaurId: {
-    type: Number,
+    type: [],
     required: true,
   },
 });

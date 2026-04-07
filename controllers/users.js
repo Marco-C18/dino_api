@@ -12,10 +12,10 @@ class UsuariosController {
     }
   }
 
-  async searchUsersName(req, res) {
+  async searchUsersDni(req, res) {
     try {
       const usuarioData = await user.find({
-        name: req.body.name,
+        dni: req.body.dni,
         password: req.body.password,
       });
       if (usuarioData) {

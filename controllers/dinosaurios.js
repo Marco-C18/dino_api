@@ -14,9 +14,9 @@ class DinosauriosController {
   }
 
   // Buscar por ID
-  async searchDinoID(req, res) {
+  async searchDinoName(req, res) {
     try {
-      const DinosauriosData = await dinosaurio.findOne({ _id: req.body._id });
+      const DinosauriosData = await dinosaurio.find({ name: req.body.name });
 
       if (DinosauriosData) {
         return res.json(DinosauriosData);

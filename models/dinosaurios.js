@@ -21,15 +21,15 @@ const dinoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  sound: {
-    type: String,
-    required: true,
-  },
   habitat: {
     type: String,
     required: true,
   },
   species: {
+    type: String,
+    required: true,
+  },
+  era: {
     type: String,
     required: true,
   },
